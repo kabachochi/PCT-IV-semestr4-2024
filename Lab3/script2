@@ -1,0 +1,22 @@
+#!/usr/bin/gnuplot
+
+set termoption enhanced
+set terminal svg size 800,600 font "Arial, 16"
+set output "monte.html"
+
+set style line 1 lc rgb "0x32CD32" lt 1 lw 4 pt 9 ps 1
+set style line 2 lc rgb "0xFFA500" lt 1 lw 4 pt 7 ps 1
+set style line 3 lc rgb "0x00FFFF" lt 1 lw 4 pt 5 ps 1
+
+set border lw 2
+set grid
+set key top left
+
+set xlabel "Elements"
+set ylabel "Acceleration" rotate by 90
+set format x "%.0f"
+set format y "%.2f"
+
+plot "monte10e7.dat" using 1:2 title "Monte 10e7" with linespoints ls 1, \
+    "monte10e8.dat" using 1:2 title "Monte 10e8" with linespoints ls 2, \
+    "perfecto.dat" using 1:2 title "Perfecto" with linespoints ls 3

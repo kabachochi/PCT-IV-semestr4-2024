@@ -1,0 +1,24 @@
+#!/usr/bin/gnuplot
+
+set termoption enhanced
+set terminal svg size 800,600 font "Arial, 16"
+set output "plot.html"
+
+set style line 1 lc rgb "0x32CD32" lt 1 lw 4 pt 9 ps 1
+set style line 2 lc rgb "0xFFA500" lt 1 lw 4 pt 7 ps 1
+set style line 3 lc rgb "0x00FFFF" lt 1 lw 4 pt 5 ps 1
+set style line 4 lc rgb "0xCCCCCC" lt 1 lw 4 pt 3 ps 1
+
+set border lw 2
+set grid
+set key top left
+
+set xlabel "Threads"
+set ylabel "Acceleration" rotate by 90
+set format x "%.0f"
+set format y "%.2f"
+
+plot "result.dat" using 1:2 title "2 threads" with linespoints ls 1, \
+    "result.dat" using 1:3 title "4 threads" with linespoints ls 2, \
+    "result.dat" using 1:4 title "6 threads" with linespoints ls 3, \
+    "result.dat" using 1:5 title "8 threads" with linespoints ls 4
