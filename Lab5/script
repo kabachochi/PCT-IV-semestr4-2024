@@ -1,0 +1,36 @@
+#!/usr/bin/gnuplot
+
+set termoption enhanced
+set terminal svg size 800,600 font "Arial, 16"
+
+set style line 1 lc rgb "red" lt 1 lw 4 pt 9 ps 1
+set style line 2 lc rgb "green" lt 1 lw 4 pt 7 ps 1
+set style line 3 lc rgb "blue" lt 1 lw 4 pt 7 ps 1
+set style line 4 lc rgb "yellow" lt 1 lw 4 pt 7 ps 1
+
+set border lw 2
+set grid
+set key top left
+
+set xlabel "Threads"
+set ylabel "Acceleration" rotate by 90
+set format x "%.0f"
+set format y "%.2f"
+
+set output "1000.html"
+plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
+    "quick_thre_1000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
+    "quick_thre_1000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
+    "quick_thre_1000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
+
+set output "10000.html"
+plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
+    "quick_thre_10000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
+    "quick_thre_10000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
+    "quick_thre_10000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
+
+set output "100000.html"
+plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
+    "quick_thre_100000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
+    "quick_thre_100000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
+    "quick_thre_100000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
