@@ -69,7 +69,7 @@ void init(int *v, int size)
 {
     for (int i = 0; i < size; i++)
     {
-        v[i] = rand() / RAND_MAX * 1000;
+        v[i] = rand();
     }
 }
 

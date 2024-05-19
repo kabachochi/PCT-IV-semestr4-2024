@@ -19,18 +19,18 @@ set format y "%.2f"
 
 set output "1000.html"
 plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
-    "quick_thre_1000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
-    "quick_thre_1000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
-    "quick_thre_1000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
+    "quick_thre_1000_size_1000000.dat" using 1:2 title "size 1e6" with linespoints ls 2, \
+    "quick_thre_1000_size_10000000.dat" using 1:2 title "size 1e7" with linespoints ls 3, \
+    "quick_thre_1000_size_100000000.dat" using 1:2 title "size 1e8" with linespoints ls 4
 
 set output "10000.html"
 plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
-    "quick_thre_10000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
-    "quick_thre_10000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
-    "quick_thre_10000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
+    "quick_thre_10000_size_1000000.dat" using 1:2 title "size 1e6" with linespoints ls 2, \
+    "quick_thre_10000_size_10000000.dat" using 1:2 title "size 1e7" with linespoints ls 3, \
+    "quick_thre_10000_size_100000000.dat" using 1:2 title "size 1e8" with linespoints ls 4
 
 set output "100000.html"
 plot "perfecto.dat" using 1:2 title "perfect" with linespoints ls 1, \
-    "quick_thre_100000_size_1000000.dat" using 1:2 title "size 1000" with linespoints ls 2, \
-    "quick_thre_100000_size_10000000.dat" using 1:2 title "size 10000" with linespoints ls 3, \
-    "quick_thre_100000_size_100000000.dat" using 1:2 title "size 100000" with linespoints ls 4
+    "quick_thre_100000_size_1000000.dat" using 1:2 title "size 1e6" with linespoints ls 2, \
+    "quick_thre_100000_size_10000000.dat" using 1:2 title "size 1e7" with linespoints ls 3, \
+    "quick_thre_100000_size_100000000.dat" using 1:2 title "size 1e8" with linespoints ls 4
